@@ -6,29 +6,31 @@
 #    By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 12:54:14 by bazaluga          #+#    #+#              #
-#    Updated: 2025/01/23 14:17:24 by bazaluga         ###   ########.fr        #
+#    Updated: 2025/02/04 14:24:31 by bazaluga         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	:=	megaphone
 SRC		:=	megaphone.cpp
-OBJDIR	:=	.obj
-OBJ		:=	$(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
+OBJ		:=	$(SRC:.cpp=.o)
 CC		:=	c++
 CFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 
-all:				$(NAME)
+all:		$(NAME)
 
-$(OBJDIR)/%.o:		%.c
-					$(CC) $(CFLAGS) -c $< -o $@
+%.o:		%.c
+			$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):			$(OBJ)
-					$(CC) $(OBJ) -o $(NAME)
+$(OBJDIR):
+			mkdir -p $(OBJDIR)
+
+$(NAME):	$(OBJDIR) $(OBJ)
+			$(CC) $(OBJ) -o $(NAME)
 
 clean:
-					rm -f $(OBJ)
+			rm -f $(OBJ)
 
-fclean:				clean
-					rm -f $(NAME)
+fclean:		clean
+			rm -f $(NAME)
 
-.PHONY:				all clean fclean
+.PHONY:		all clean fclean
