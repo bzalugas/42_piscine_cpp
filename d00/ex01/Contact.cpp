@@ -6,84 +6,64 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:08:36 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/07 13:14:13 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/10 14:46:18 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Contact.hpp"
 #include <iostream>
 
-Contact::Contact(std::string firstName, std::string lastName, std::string nickname,
-                 std::string phoneNumber, std::string darkSecret) :
-    _firstName(firstName), _lastName(lastName), _nickname(nickname),
-    _phoneNumber(phoneNumber), _darkSecret(darkSecret)
+Contact::Contact(void){}
+Contact::~Contact(void){}
+
+std::string	Contact::getInfo(t_info info) const
 {
-    return ;
-}
-Contact::Contact(void)
-{
-    return ;
-}
-Contact::~Contact(void)
-{
-    return ;
+	switch (info)
+	{
+		case firstName:
+			return (this->_firstName);
+		case lastName:
+			return (this->_lastName);
+		case nickname:
+			return (this->_nickname);
+		case phone:
+			return (this->_phoneNumber);
+		case secret:
+			return (this->_darkSecret);
+		default:
+			return (NULL);
+	}
 }
 
-std::string Contact::getFirstName(void) const
+void			Contact::setInfo(t_info info, std::string str)
 {
-    return (this->_firstName);
+	switch (info)
+	{
+		case firstName:
+			this->_firstName = str;
+			break;
+		case lastName:
+			this->_lastName = str;
+			break;
+		case nickname:
+			this->_nickname = str;
+			break;
+		case phone:
+			this->_phoneNumber = str;
+			break;
+		case secret:
+			this->_darkSecret = str;
+			break;
+		default:
+			break;
+	}
 }
 
-std::string Contact::getLastName(void) const
+void			Contact::display(void)
 {
-    return (this->_lastName);
-}
-
-std::string Contact::getNickname(void) const
-{
-    return (this->_nickname);
-}
-
-std::string Contact::getPhoneNumber(void) const
-{
-    return (this->_phoneNumber);
-}
-
-std::string Contact::getDarkSecret(void) const
-{
-    return (this->_darkSecret);
-}
-
-void        Contact::setFirstName(std::string firstName)
-{
-    this->_firstName = firstName;
-}
-
-void        Contact::setLastName(std::string lastName)
-{
-    this->_lastName = lastName;
-}
-
-void        Contact::setNickname(std::string nickname)
-{
-    this->_nickname = nickname;
-}
-
-void        Contact::setPhoneNumber(std::string phoneNumber)
-{
-    this->_phoneNumber = phoneNumber;
-}
-
-void        Contact::setDarkSecret(std::string darkSecret)
-{
-    this->_darkSecret = darkSecret;
-}
-
-void        Contact::display(void)
-{
-    std::cout << "First name:\t" << this->getFirstName() << std::endl;
-    std::cout << "Last name:\t" << this->getLastName() << std::endl;
-    std::cout << "Nickname:\t" << this->getNickname() << std::endl;
-    std::cout << "Phone number:\t" << this->getPhoneNumber() << std::endl;
-    std::cout << "Darkest secret:\t" << this->getDarkSecret() << std::endl;
+    std::cout << "First name:\t" << this->getInfo(firstName) << std::endl;
+    std::cout << "Last name:\t" << this->getInfo(lastName) << std::endl;
+    std::cout << "Nickname:\t" << this->getInfo(nickname) << std::endl;
+    std::cout << "Phone number:\t" << this->getInfo(phone) << std::endl;
+    std::cout << "Darkest secret:\t" << this->getInfo(secret) << std::endl;
 }

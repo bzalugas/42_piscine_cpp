@@ -6,43 +6,41 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 11:57:46 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/07 12:44:20 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/10 14:36:09 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #ifndef CONTACT_H
 # define CONTACT_H
-
 # include <iostream>
+
+typedef enum e_info
+{
+	firstName=0,
+	lastName,
+	nickname,
+	phone,
+	secret
+}           t_info;
 
 class Contact{
 
-    public:
-        Contact(void);
-        Contact(std::string firstName, std::string lastName, std::string nickname,
-                std::string phoneNumber, std::string darkSecret);
-        ~Contact(void);
+public:
+	Contact(void);
+	~Contact(void);
 
-        std::string getFirstName(void) const;
-        std::string getLastName(void) const;
-        std::string getNickname(void) const;
-        std::string getPhoneNumber(void) const;
-        std::string getDarkSecret(void) const;
+	std::string getInfo(t_info info) const;
 
-        void        setFirstName(std::string firstName);
-        void        setLastName(std::string lastName);
-        void        setNickname(std::string nickname);
-        void        setPhoneNumber(std::string phoneNumber);
-        void        setDarkSecret(std::string darkSecret);
+	void        setInfo(t_info info, std::string str);
 
-        void        display(void);
+	void        display(void);
 
-    private:
-        std::string _firstName;
-        std::string _lastName;
-        std::string _nickname;
-        std::string _phoneNumber;
-        std::string _darkSecret;
+private:
+	std::string _firstName;
+	std::string _lastName;
+	std::string _nickname;
+	std::string _phoneNumber;
+	std::string _darkSecret;
 };
 
 #endif
