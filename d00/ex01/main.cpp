@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 13:08:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/11 13:35:04 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/11 13:35:31 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -57,28 +57,5 @@ int main(void)
             std::cerr << "\nPlease enter a correct command. You can do it!\n" << std::endl;
     }
     std::cout << "BYE MY FRIEND!" << std::endl;
-    // Contact c;
-
-    // c = Contact("Bastien", "Zalugas", "baza", "0785579644", "I love planes");
-    // book.addContact(c);
-    // c = Contact("dlsjf", "kdsfh", "coucou", "0785579644", "012345678910");
-    // book.addContact(c);
-    // c = Contact("Bonjour a tous, je m'appelle Bastien", "Zalugas", "baza", "0785579644", "I love planes");
-    // book.addContact(c);
-    // c = Contact("B", "Z", "baza", "644", "I love planes");
-    // book.addContact(c);
-    // c = Contact("Bastien", "fldsj", "baza", "0785579644", "I love planes");
-    // book.addContact(c);
-    // c = Contact("Bastien", "dslfkjsdlfjsldjfljdas", "baza", "0785579644", "I love planes");
-    // book.addContact(c);
-    // c = Contact("Bastien", "012345678910", "baza", "078557964409832049802384008", "I love planes");
-    // book.addContact(c);
-    // c = Contact("Bastien", "LAST", "baza", "0785579644fdlsjflsj", "I love planes");
-    // book.addContact(c);
-    // c = Contact("Bastien", "NEUVIEME", "baza", "0785579644fdlsjflsj", "I love planes");
-    // book.addContact(c);
-    // c = Contact("Bastien", "DIXIEME", "baza", "0785579644fdlsjflsj", "I love planes");
-    // book.addContact(c);
-    // book.displayContacts();
     return 0;
 }
