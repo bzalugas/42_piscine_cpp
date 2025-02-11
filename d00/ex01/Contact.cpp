@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:08:36 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/10 14:46:18 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/11 13:31:41 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,6 +14,10 @@
 #include <iostream>
 
 Contact::Contact(void){}
+Contact::Contact(std::string first, std::string last, std::string nick,
+			std::string phone, std::string secret) :
+	_firstName(first), _lastName(last), _nickname(nick), _phoneNumber(phone),
+	_darkSecret(secret) {}
 Contact::~Contact(void){}
 
 std::string	Contact::getInfo(t_info info) const
@@ -61,9 +65,11 @@ void			Contact::setInfo(t_info info, std::string str)
 
 void			Contact::display(void)
 {
-    std::cout << "First name:\t" << this->getInfo(firstName) << std::endl;
-    std::cout << "Last name:\t" << this->getInfo(lastName) << std::endl;
-    std::cout << "Nickname:\t" << this->getInfo(nickname) << std::endl;
-    std::cout << "Phone number:\t" << this->getInfo(phone) << std::endl;
-    std::cout << "Darkest secret:\t" << this->getInfo(secret) << std::endl;
+	std::cout << std::endl;
+    std::cout << "\tFirst name:\t" << this->getInfo(firstName) << std::endl;
+    std::cout << "\tLast name:\t" << this->getInfo(lastName) << std::endl;
+    std::cout << "\tNickname:\t" << this->getInfo(nickname) << std::endl;
+    std::cout << "\tPhone number:\t" << this->getInfo(phone) << std::endl;
+    std::cout << "\tDarkest secret:\t" << this->getInfo(secret) << std::endl;
+	std::cout << std::endl;
 }

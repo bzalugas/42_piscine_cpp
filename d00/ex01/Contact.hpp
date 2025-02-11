@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 11:57:46 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/10 14:36:09 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/11 11:05:58 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,6 +27,8 @@ class Contact{
 
 public:
 	Contact(void);
+	Contact(std::string first, std::string last, std::string nick,
+			std::string phone, std::string secret);
 	~Contact(void);
 
 	std::string getInfo(t_info info) const;

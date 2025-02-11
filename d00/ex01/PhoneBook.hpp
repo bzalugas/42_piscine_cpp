@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:30:58 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/10 23:06:12 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/11 11:19:25 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -23,6 +23,7 @@ public:
     ~PhoneBook(void);
 
     void    displayContacts(void) const;
+    void    addContact(Contact c);
     int     add(void);//ask the user for infos & call addContact if everything ok
     int     search(void);//display contacts infos, ask for index then display all infos of contact
 
@@ -31,6 +32,7 @@ private:
     int     _nbContacts;
     int     _nextContact;
 
+    void		_incrContactsNb(void);
     std::string _formatContactInfo(std::string str) const;
     Contact 	*_getNextAvailContact(void);
 };
