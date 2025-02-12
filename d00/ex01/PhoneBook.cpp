@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:50:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/11 13:29:07 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/12 23:14:38 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -40,35 +40,40 @@ int     PhoneBook::add(void)
 
     std::cout << "* First name:                                  *";
     std::cout << std::string(34, '\b');
-    std::getline(std::cin, tmp);
+    if (!std::getline(std::cin, tmp))
+		return (6);
 	if (tmp.length() <= 1)
 		return (1);
     contact->setInfo(firstName, tmp);
 
 	std::cout << "* Last name:                                   *";
 	std::cout << std::string(35, '\b');
-	std::getline(std::cin, tmp);
+	if (!std::getline(std::cin, tmp))
+		return (6);
 	if (tmp.length() <= 1)
 		return (2);
 	contact->setInfo(lastName, tmp);
 
 	std::cout << "* Nickname:                                    *";
 	std::cout << std::string(36, '\b');
-	std::getline(std::cin, tmp);
+	if (!std::getline(std::cin, tmp))
+		return (6);
 	if (tmp.length() <= 1)
 		return (3);
 	contact->setInfo(nickname, tmp);
 
 	std::cout << "* Phone number:                                *";
 	std::cout << std::string(32, '\b');
-	std::getline(std::cin, tmp);
+	if (!std::getline(std::cin, tmp))
+		return (6);
 	if (tmp.length() <= 1)
 		return (4);
 	contact->setInfo(phone, tmp);
 
 	std::cout << "* Darkest secret:                              *";
 	std::cout << std::string(30, '\b');
-	std::getline(std::cin, tmp);
+	if (!std::getline(std::cin, tmp))
+		return (6);
 	if (tmp.length() <= 1)
 		return (5);
 	contact->setInfo(secret, tmp);
@@ -141,6 +146,8 @@ int		PhoneBook::search(void)
 			else
 				break ;
 		}
+		else if (!std::cin)
+			return (1);
 		else
 			std::cerr << "\nPLEASE ENTER A CORRECT INTEGER\n" << std::endl;
 	}
