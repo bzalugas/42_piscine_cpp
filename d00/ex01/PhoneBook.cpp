@@ -6,13 +6,13 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:50:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/12 23:14:38 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/13 10:55:19 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-#include <cctype>
+#include <cstdlib>
 
 PhoneBook::PhoneBook(void)
 {
@@ -140,7 +140,7 @@ int		PhoneBook::search(void)
 		std::cin.clear();
 		if (std::getline(std::cin, input) && valid_number(input))
 		{
-			index = std::stoi(input);index = std::stoi(input);
+			index = std::atoi(input.c_str());
 			if (index < 0 || index >= this->_nbContacts)
 				std::cerr << "\nPLEASE ENTER AN INTEGER IN THE CORRECT RANGE\n" << std::endl;
 			else
