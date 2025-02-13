@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 13:08:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/12 23:13:10 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/13 11:19:14 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,6 +26,8 @@ static int  handle_input(PhoneBook *book)
 
 	if (!std::getline(std::cin, in))
 		return (1);
+	if (in.length() == 0)
+		return (3);
 	if (in == "ADD")
 	{
 		while ((ret = book->add()))
@@ -41,7 +43,10 @@ static int  handle_input(PhoneBook *book)
 	else if (in == "EXIT")
 		return (1);
 	else
+	{
+		std::cerr << "Invalid command" << std::endl;
 		return (2);
+	}
 	return (0);
 }
 
@@ -50,17 +55,19 @@ int main(void)
 	PhoneBook   book;
 	int         ret;
 
+	//Quit search if error
+	//don't prompt again if \n in main menu
 	std::cout << "\033[2J";
 	std::cout << "\033[H";
 	std::cout << "\tWELCOME TO MY AWESOME PHONE BOOK\n" << std::endl;
+	display_menu();
 	while (1)
 	{
-		display_menu();
+		// display_menu();
 		ret = handle_input(&book);
 		if (ret == 1)
 			break ;
-		if (ret == 2)
-			std::cerr << "\nPlease enter a correct command. You can do it!\n" << std::endl;
+		std::cerr << ">> ";
 	}
 	std::cout << "BYE MY FRIEND!" << std::endl;
 	return 0;

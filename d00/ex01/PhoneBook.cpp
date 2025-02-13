@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:50:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/13 10:55:19 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/13 11:20:42 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -134,22 +134,20 @@ int		PhoneBook::search(void)
 	this->displayContacts();
 	if (this->_nbContacts == 0)
 		return (0);
-	while (1)
+	std::cout << "Please enter the index of the contact you're searching for: ";
+	std::cin.clear();
+	if (std::getline(std::cin, input) && valid_number(input))
 	{
-		std::cout << "Please enter the index of the contact you're searching for: ";
-		std::cin.clear();
-		if (std::getline(std::cin, input) && valid_number(input))
-		{
-			index = std::atoi(input.c_str());
-			if (index < 0 || index >= this->_nbContacts)
-				std::cerr << "\nPLEASE ENTER AN INTEGER IN THE CORRECT RANGE\n" << std::endl;
-			else
-				break ;
-		}
-		else if (!std::cin)
-			return (1);
-		else
-			std::cerr << "\nPLEASE ENTER A CORRECT INTEGER\n" << std::endl;
+		index = std::atoi(input.c_str());
+		if (index < 0 || index >= this->_nbContacts)
+			std::cerr << "\nPLEASE ENTER AN INTEGER IN THE CORRECT RANGE\n" << std::endl;
+	}
+	else if (!std::cin)
+		return (1);
+	else
+	{
+		std::cerr << "\nPLEASE ENTER A CORRECT INTEGER\n" << std::endl;
+		return (0);
 	}
 	this->_contacts[index].display();
 	return (0);
