@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/02/07 12:50:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/02/13 11:20:42 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/02/15 16:15:45 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -42,7 +42,7 @@ int     PhoneBook::add(void)
     std::cout << std::string(34, '\b');
     if (!std::getline(std::cin, tmp))
 		return (6);
-	if (tmp.length() <= 1)
+	if (tmp.length() < 1)
 		return (1);
     contact->setInfo(firstName, tmp);
 
@@ -50,7 +50,7 @@ int     PhoneBook::add(void)
 	std::cout << std::string(35, '\b');
 	if (!std::getline(std::cin, tmp))
 		return (6);
-	if (tmp.length() <= 1)
+	if (tmp.length() < 1)
 		return (2);
 	contact->setInfo(lastName, tmp);
 
@@ -58,7 +58,7 @@ int     PhoneBook::add(void)
 	std::cout << std::string(36, '\b');
 	if (!std::getline(std::cin, tmp))
 		return (6);
-	if (tmp.length() <= 1)
+	if (tmp.length() < 1)
 		return (3);
 	contact->setInfo(nickname, tmp);
 
@@ -66,7 +66,7 @@ int     PhoneBook::add(void)
 	std::cout << std::string(32, '\b');
 	if (!std::getline(std::cin, tmp))
 		return (6);
-	if (tmp.length() <= 1)
+	if (tmp.length() < 1)
 		return (4);
 	contact->setInfo(phone, tmp);
 
@@ -74,7 +74,7 @@ int     PhoneBook::add(void)
 	std::cout << std::string(30, '\b');
 	if (!std::getline(std::cin, tmp))
 		return (6);
-	if (tmp.length() <= 1)
+	if (tmp.length() < 1)
 		return (5);
 	contact->setInfo(secret, tmp);
     std::cout << "************************************************" << std::endl;
@@ -140,7 +140,10 @@ int		PhoneBook::search(void)
 	{
 		index = std::atoi(input.c_str());
 		if (index < 0 || index >= this->_nbContacts)
+		{
 			std::cerr << "\nPLEASE ENTER AN INTEGER IN THE CORRECT RANGE\n" << std::endl;
+			return (0);
+		}
 	}
 	else if (!std::cin)
 		return (1);
