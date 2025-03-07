@@ -1,4 +1,9 @@
 .DS_Store
 */.git
 *.out
+*.o
 */.obj
+megaphone
+phonebook
+bank
+main
