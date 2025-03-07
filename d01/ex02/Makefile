@@ -6,14 +6,14 @@
 #    By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 12:54:14 by bazaluga          #+#    #+#              #
-#    Updated: 2025/03/07 12:32:31 by bazaluga         ###   ########.fr        #
+#    Updated: 2025/03/07 12:31:57 by bazaluga         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	:=  main
 SRCDIR	:=  .
 OBJDIR	:=  .obj
-SRC	:=  main.cpp Zombie.cpp zombieHorde.cpp
+SRC	:=  main.cpp
 OBJ	:=  $(SRC:.cpp=.o)
 SRC	:=  $(addprefix $(SRCDIR)/, $(SRC))
 OBJ	:=  $(addprefix $(OBJDIR)/, $(OBJ))
