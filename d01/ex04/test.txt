@@ -1,0 +1,9 @@
+Hello, j'ecris un texte a la con
+
+Juste pour tester mon petit programme
+
+hihi salut a tous, si tu me lis tu es un stalker
+ou alors t'avais la flemme de te debrouiller pour reussir cet exo de cpp a 42
+
+Bien-sur, tout ca c'est Juste pour tester mon petit programme... Du coup c'est mieux si je fais un texte
+qui a plusieurs fois le meme mot pour pouvoir bien tester mon programme et essayer de trouver tous les edge cases.
