@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/12 14:01:19 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/12 14:29:14 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/12 14:35:41 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,24 +16,24 @@ int	main(void)
 {
 	Harl	h;
 
-	h.complain("debug");
-	h.complain("debug");
-	h.complain("debug");
-	h.complain("debug");
-	h.complain("debug");
+	h.complain("DEBUG");
+	h.complain("DEBUG");
+	h.complain("DEBUG");
+	h.complain("DEBUG");
+	h.complain("DEBUG");
 	h.complain("test");
-	h.complain("info");
-	h.complain("info");
+	h.complain("INFO");
+	h.complain("INFO");
 	h.complain("test");
-	h.complain("warning");
-	h.complain("warning");
-	h.complain("warning");
+	h.complain("WARNING");
+	h.complain("WARNING");
+	h.complain("WARNING");
 	h.complain("test");
-	h.complain("error");
-	h.complain("error");
+	h.complain("ERROR");
+	h.complain("ERROR");
 	h.complain("test");
-	h.complain("error");
-	h.complain("error");
+	h.complain("ERROR");
+	h.complain("ERROR");
 
 	return 0;
 }

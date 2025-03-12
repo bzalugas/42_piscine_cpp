@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/12 12:51:34 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/12 14:27:22 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/12 14:34:50 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,10 +19,10 @@ void	Harl::initMap(void)
 {
 	if (_fctsMap.empty())
 	{
-		_fctsMap["debug"] = &Harl::debug;
-		_fctsMap["info"] = &Harl::info;
-		_fctsMap["warning"] = &Harl::warning;
-		_fctsMap["error"] = &Harl::error;
+		_fctsMap["DEBUG"] = &Harl::debug;
+		_fctsMap["INFO"] = &Harl::info;
+		_fctsMap["WARNING"] = &Harl::warning;
+		_fctsMap["ERROR"] = &Harl::error;
 	}
 }
 
