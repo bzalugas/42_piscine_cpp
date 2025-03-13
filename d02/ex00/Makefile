@@ -6,14 +6,14 @@
 #    By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 12:54:14 by bazaluga          #+#    #+#              #
-#    Updated: 2025/03/12 14:40:01 by bazaluga         ###   ########.fr        #
+#    Updated: 2025/03/13 14:23:30 by bazaluga         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME	:=  harlFilter
+NAME	:=  main
 SRCDIR	:=  .
 OBJDIR	:=  .obj
-SRC	:=  main.cpp Harl.cpp
+SRC	:=  main.cpp Fixed.hpp Fixed.cpp
 OBJ	:=  $(SRC:.cpp=.o)
 SRC	:=  $(addprefix $(SRCDIR)/, $(SRC))
 OBJ	:=  $(addprefix $(OBJDIR)/, $(OBJ))
