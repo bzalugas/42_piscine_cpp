@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/13 19:52:12 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/14 13:41:56 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/14 14:01:04 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,9 +19,14 @@ Fixed::Fixed(void) : _n(0)
 	std::cout << "Default constructor called" << std::endl;
 };
 
-Fixed::Fixed(int n) : _n(n)
+Fixed::Fixed(int const n) : _n(n << 1)
 {
+	std::cout << "Constructor with int called" << std::endl;
+};
 
+Fixed::Fixed(float const f) : _n(f)
+{
+	std::cout << "Constructor with float called" << std::endl;
 };
 
 // Fixed::Fixed(Fixed const &f) : _n(f.getRawBits())
@@ -53,4 +58,9 @@ void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	_n = raw;
+}
+
+int		Fixed::toInt(void) const
+{
+	return (_n >> 1);
 }
