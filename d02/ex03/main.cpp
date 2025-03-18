@@ -6,80 +6,55 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/14 13:34:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/17 20:04:16 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/18 15:19:21 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Fixed.hpp"
+#include "Point.hpp"
+#include <string>
 
-void	myTests(void)
+// Explanation of calculations
+// point = a + w1(b - a) + w2(c - a)
+//
+// After some math, we found that:
+// w1 = a.x * (c.y - a.y) + (point.y - a.y) * (c.x - a.x) - point.x * (c.y - a.y)
+//	   / (b.y - a.y) * (c.x - a.x) - (b.x - a.x) * (c.y - a.y)
+//
+// w2 = point.y - a.y - w1(b.y - a.y) / c.y - a.y
+//
+// If w1 + w2 < 1 & w1 > 0 & w2 > 0 then point if in triangle
+// (subject requires to consider the point as beeing outside the triangle if
+// it's on edge or a vertex)
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed		a(1234);
-	Fixed		b(10);
+	Fixed	s1(c.getY() - a.getY());
+	Fixed	s2(point.getY() - a.getY());
+	Fixed	s3(c.getX() - a.getX());
+	Fixed	s4(b.getY() - a.getY());
+	Fixed	s5(b.getX() - a.getX());
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "Raw bits of a: " << a.getStrBits() << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "Raw bits of b: " << b.getStrBits() << std::endl;
+	Fixed	w1 = (a.getX() * s1 + s2 * s3 - point.getX() * s1) /
+		(s4 * s3 - s5 * s1);
+	Fixed	w2 = (s2 - w1 * s4) / s2.toFloat();
 
-	std::cout << "a > b: " << (a > b) << std::endl;
-	std::cout << "a < b: " << (a < b) << std::endl;
-	std::cout << "a >= b: " << (a >= b) << std::endl;
-	std::cout << "a <= b: " << (a <= b) << std::endl;
-	std::cout << "a == b: " << (a == b) << std::endl;
-	std::cout << "a != b: " << (a != b) << std::endl;
-
-	std::cout << "Change b to 1234" << std::endl;
-	b = Fixed(1234);
-	std::cout << "a > b: " << (a > b) << std::endl;
-	std::cout << "a < b: " << (a < b) << std::endl;
-	std::cout << "a >= b: " << (a >= b) << std::endl;
-	std::cout << "a <= b: " << (a <= b) << std::endl;
-	std::cout << "a == b: " << (a == b) << std::endl;
-	std::cout << "a != b: " << (a != b) << std::endl;
-
-	std::cout << "Change b to 10" << std::endl;
-	b = Fixed(10);
-	// std::cout << "b=" << b << std::endl;
-	std::cout << "a + b = " << a + b << std::endl;
-	std::cout << "a - b = " << a - b << std::endl;
-	std::cout << "a * b = " << a * b << std::endl;
-	std::cout << "a / b = " << a / b << std::endl;
-
-	std::cout << "doing b++. inline: " << b++ << " after: " << b << std::endl;
-	--b;
-	std::cout << "doing ++b. inline: " << ++b << " after: " << b << std::endl;
-	--b;
-	std::cout << "doing b--. inline: " << b-- << " after: " << b << std::endl;
-	++b;
-	std::cout << "doing --b. inline: " << --b << " after: " << b << std::endl;
-	++b;
-
-	std::cout << "max(" << a << "," << b << ") = " << Fixed::max(a,b) << std::endl;
-	std::cout << "min(" << a << "," << b << ") = " << Fixed::min(a,b) << std::endl;
+	return (w1 > 0 && w2 > 0 && (w1 + w2) < 1);
 }
 
-void	subjectTests(void)
+int		main(int argc, char *argv[])
 {
-	Fixed		a;
-	Fixed const	b(Fixed(5.05f) * Fixed(2));
+	if (argc < 9 || argc > 9)
+	{
+		std::cerr << "Usage: ./main ax ay bx by cx cy px py" << std::endl;
+		return (1);
+	}
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max(a, b) << std::endl;
-}
-
-int		main(void)
-{
-	std::cout << "----- My tests -----" << std::endl;
-	myTests();
-	std::cout << std::endl << "----- Subject tests -----" << std::endl;
-	subjectTests();
+	Point	a(std::stoi(argv[1]), std::stoi(argv[2]));
+	Point	b(std::stoi(argv[3]), std::stoi(argv[4]));
+	Point	c(std::stoi(argv[5]), std::stoi(argv[6]));
+	Point	point(std::stoi(argv[7]), std::stoi(argv[8]));
+	bool inside  = bsp(a, b, c, point);
+	std::cout << "The point (" << point.getX() << ", " << point.getY() << ") is "
+			  << (inside ? "inside" : "NOT inside") << " the triangle." << std::endl;
 	return (0);
 }
