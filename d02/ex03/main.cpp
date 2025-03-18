@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/14 13:34:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/18 15:19:21 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/18 16:42:32 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -36,7 +36,7 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 
 	Fixed	w1 = (a.getX() * s1 + s2 * s3 - point.getX() * s1) /
 		(s4 * s3 - s5 * s1);
-	Fixed	w2 = (s2 - w1 * s4) / s2.toFloat();
+	Fixed	w2 = (s2 - w1 * s4) / s1.toFloat();
 
 	return (w1 > 0 && w2 > 0 && (w1 + w2) < 1);
 }
