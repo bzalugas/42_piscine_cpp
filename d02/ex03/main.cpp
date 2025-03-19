@@ -6,25 +6,27 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/14 13:34:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/18 16:42:32 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/19 14:38:55 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
 #include "Point.hpp"
-#include <string>
+#include <cstdlib>
 
-// Explanation of calculations
-// point = a + w1(b - a) + w2(c - a)
-//
-// After some math, we found that:
-// w1 = a.x * (c.y - a.y) + (point.y - a.y) * (c.x - a.x) - point.x * (c.y - a.y)
-//	   / (b.y - a.y) * (c.x - a.x) - (b.x - a.x) * (c.y - a.y)
-//
-// w2 = point.y - a.y - w1(b.y - a.y) / c.y - a.y
-//
-// If w1 + w2 < 1 & w1 > 0 & w2 > 0 then point if in triangle
-// (subject requires to consider the point as beeing outside the triangle if
-// it's on edge or a vertex)
+/*
+ * Fixed::Explanation of calculations
+ * Fixed::point = a + w1(b - a) + w2(c - a)
+ * Fixed::
+ * Fixed::After some math, we found that:
+ * Fixed::w1 = a.x * (c.y - a.y) + (point.y - a.y) * (c.x - a.x) - point.x * (c.y - a.y)
+ * Fixed::	   / (b.y - a.y) * (c.x - a.x) - (b.x - a.x) * (c.y - a.y)
+ * Fixed::
+ * Fixed::w2 = point.y - a.y - w1(b.y - a.y) / c.y - a.y
+ * Fixed::
+ * Fixed::If w1 + w2 < 1 & w1 > 0 & w2 > 0 then point if in triangle
+ * Fixed::(subject requires to consider the point as beeing outside the triangle if
+ * Fixed::it's on edge or a vertex)
+ */
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
@@ -49,10 +51,10 @@ int		main(int argc, char *argv[])
 		return (1);
 	}
 
-	Point	a(std::stoi(argv[1]), std::stoi(argv[2]));
-	Point	b(std::stoi(argv[3]), std::stoi(argv[4]));
-	Point	c(std::stoi(argv[5]), std::stoi(argv[6]));
-	Point	point(std::stoi(argv[7]), std::stoi(argv[8]));
+	Point	a((float)std::atof(argv[1]), (float)std::atof(argv[2]));
+	Point	b((float)std::atof(argv[3]), (float)std::atof(argv[4]));
+	Point	c((float)std::atof(argv[5]), (float)std::atof(argv[6]));
+	Point	point((float)std::atof(argv[7]), (float)std::atof(argv[8]));
 	bool inside  = bsp(a, b, c, point);
 	std::cout << "The point (" << point.getX() << ", " << point.getY() << ") is "
 			  << (inside ? "inside" : "NOT inside") << " the triangle." << std::endl;
