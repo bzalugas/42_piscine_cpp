@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/14 13:34:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/17 20:04:16 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/20 11:52:56 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -14,8 +14,8 @@
 
 void	myTests(void)
 {
-	Fixed		a(1234);
-	Fixed		b(10);
+	Fixed		a(1234.4321f);
+	Fixed		b(10.45f);
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "Raw bits of a: " << a.getStrBits() << std::endl;
@@ -29,8 +29,8 @@ void	myTests(void)
 	std::cout << "a == b: " << (a == b) << std::endl;
 	std::cout << "a != b: " << (a != b) << std::endl;
 
-	std::cout << "Change b to 1234" << std::endl;
-	b = Fixed(1234);
+	std::cout << "Change b to 1234.32" << std::endl;
+	b = Fixed(1234.32f);
 	std::cout << "a > b: " << (a > b) << std::endl;
 	std::cout << "a < b: " << (a < b) << std::endl;
 	std::cout << "a >= b: " << (a >= b) << std::endl;
@@ -38,8 +38,8 @@ void	myTests(void)
 	std::cout << "a == b: " << (a == b) << std::endl;
 	std::cout << "a != b: " << (a != b) << std::endl;
 
-	std::cout << "Change b to 10" << std::endl;
-	b = Fixed(10);
+	std::cout << "Change b to 10.45" << std::endl;
+	b = Fixed(10.45f);
 	// std::cout << "b=" << b << std::endl;
 	std::cout << "a + b = " << a + b << std::endl;
 	std::cout << "a - b = " << a - b << std::endl;

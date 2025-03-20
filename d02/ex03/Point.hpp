@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/17 20:09:27 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/17 20:17:04 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/20 11:36:56 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -25,6 +25,8 @@ public:
 	Point(Point const &point);
 	Point	&operator=(Point const &point);
 	~Point(void);
+
+	static bool	bsp(Point const a, Point const b, Point const c, Point const point);
 
 	Fixed const	&getX(void) const;
 	Fixed const	&getY(void) const;
