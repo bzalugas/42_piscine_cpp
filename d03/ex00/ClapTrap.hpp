@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/19 14:53:21 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/19 15:00:38 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/24 17:02:18 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -27,7 +27,17 @@ public:
 	ClapTrap(ClapTrap &c);
 	~ClapTrap();
 
-	ClapTrap	&operator=(ClapTrap &right);
+	ClapTrap	&operator=(ClapTrap const &right);
+
+	std::string	&getName(void);
+	int			getHitPoints(void);
+	int			getEnergyPoints(void);
+	int			getAttackDamage(void);
+
+	void		setName(std::string &name);
+	void		setHitPoints(int value);
+	void		setEnergyPoints(int value);
+	void		setAttackDamage(int value);
 
 	void		attack(std::string const &target);
 	void		takeDamage(unsigned int amount);
