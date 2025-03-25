@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/24 19:06:52 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 14:59:18 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 20:32:40 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -30,6 +30,11 @@ public:
 
 	void		attack(std::string const &target);
 	void		highFivesGuys(void) const;
+
+protected:
+	int	_defaultHitPoints;
+	int	_defaultEnergyPoints;
+	int	_defaultAttackDamage;
 };
 
 #endif // FRAGTRAP_H

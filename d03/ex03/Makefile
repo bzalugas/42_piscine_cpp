@@ -6,14 +6,14 @@
 #    By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 12:54:14 by bazaluga          #+#    #+#              #
-#    Updated: 2025/03/25 15:00:04 by bazaluga         ###   ########.fr        #
+#    Updated: 2025/03/25 20:07:03 by bazaluga         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	:=  main
 SRCDIR	:=  .
 OBJDIR	:=  .obj
-SRC	:=  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC	:=  main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ	:=  $(SRC:.cpp=.o)
 SRC	:=  $(addprefix $(SRCDIR)/, $(SRC))
 OBJ	:=  $(addprefix $(OBJDIR)/, $(OBJ))

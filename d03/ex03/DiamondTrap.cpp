@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/25 11:24:26 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 14:58:38 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 20:43:57 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,18 +16,18 @@
 DiamondTrap::DiamondTrap(void) : ClapTrap("_clap_name"), _name("")
 {
 	std::cout << "DiamondTrap default constructor called." << std::endl;
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
+	_hitPoints = FragTrap::_defaultHitPoints;
+	_energyPoints = ScavTrap::_defaultEnergyPoints;
+	_attackDamage = FragTrap::_defaultAttackDamage;
 }
 
 DiamondTrap::DiamondTrap(std::string const &name) : ClapTrap(name + "_clap_name"),
 													_name(name)
 {
 	std::cout << "DiamondTrap Constructor called for " << name << std::endl;
-	_hitPoints = FragTrap::_hitPoints;
-	_energyPoints = ScavTrap::_energyPoints;
-	_attackDamage = FragTrap::_attackDamage;
+	_hitPoints = FragTrap::_defaultHitPoints;
+	_energyPoints = ScavTrap::_defaultEnergyPoints;
+	_attackDamage = FragTrap::_defaultAttackDamage;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const &copy)

@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/25 11:13:59 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 14:59:01 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 20:16:43 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -15,7 +15,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class	DiamondTrap : public FragTrap, public ScavTrap {
+class	DiamondTrap : public ScavTrap, public FragTrap {
 public:
 	DiamondTrap(void);
 	DiamondTrap(std::string const &name);

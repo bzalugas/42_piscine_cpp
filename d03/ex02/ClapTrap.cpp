@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/19 14:55:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 13:17:40 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 20:48:14 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -87,6 +87,8 @@ void		ClapTrap::beRepaired(unsigned int amount)
 				  << " left." << std::endl;
 	else
 	{
+		std::cout << "ClapTrap " << _name << " repairs itself by " << amount
+				  << " hit points." << std::endl;
 		_hitPoints += amount;
 		_energyPoints--;
 	}

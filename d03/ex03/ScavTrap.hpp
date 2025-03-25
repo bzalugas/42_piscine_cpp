@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/24 17:08:21 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 14:59:10 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 20:30:45 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -30,6 +30,11 @@ public:
 
 	void		attack(std::string const &target);
 	void		guardGate(void) const;
+
+protected:
+	int	_defaultHitPoints;
+	int	_defaultEnergyPoints;
+	int	_defaultAttackDamage;
 };
 
 #endif // SCAVTRAP_H
