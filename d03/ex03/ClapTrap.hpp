@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/19 14:53:21 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 13:16:52 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 13:21:14 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,7 +17,7 @@
 class ClapTrap {
 public:
 	ClapTrap(void);
-	ClapTrap(std::string name);
+	ClapTrap(std::string const &name);
 	ClapTrap(ClapTrap const &c);
 	~ClapTrap();
 

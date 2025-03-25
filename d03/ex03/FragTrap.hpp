@@ -1,27 +1,27 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   ClapTrap.hpp                                       :+:      :+:    :+:   //
+//   FragTrap.hpp                                       :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2025/03/19 14:53:21 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 13:16:52 by bazaluga         ###   ########.fr       //
+//   Created: 2025/03/24 19:06:52 by bazaluga          #+#    #+#             //
+//   Updated: 2025/03/25 14:59:18 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef CLAPTRAP_H
-# define CLAPTRAP_H
-# include <string>
+#ifndef FRAGTRAP_H
+# define FRAGTRAP_H
+# include "ClapTrap.hpp"
 
-class ClapTrap {
+class	FragTrap : virtual public ClapTrap {
 public:
-	ClapTrap(void);
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const &c);
-	~ClapTrap();
+	FragTrap(void);
+	FragTrap(std::string name);
+	FragTrap(FragTrap const &copy);
+	~FragTrap(void);
 
-	ClapTrap	&operator=(ClapTrap const &right);
+	FragTrap	&operator=(FragTrap const &right);
 
 	std::string	const &getName(void) const;
 	int			getHitPoints(void) const;
@@ -29,16 +29,7 @@ public:
 	int			getAttackDamage(void) const;
 
 	void		attack(std::string const &target);
-	void		takeDamage(unsigned int amount);
-	void		beRepaired(unsigned int amount);
-
-	void		display(void) const;
-
-protected:
-	std::string	_name;
-	int			_hitPoints;
-	int			_energyPoints;
-	int			_attackDamage;
+	void		highFivesGuys(void) const;
 };
 
-#endif // CLAPTRAP_H
+#endif // FRAGTRAP_H

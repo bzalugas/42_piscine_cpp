@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/19 14:55:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/24 19:03:43 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 13:15:11 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -90,4 +90,15 @@ void		ClapTrap::beRepaired(unsigned int amount)
 		_hitPoints += amount;
 		_energyPoints--;
 	}
+}
+
+void	ClapTrap::display(void) const
+{
+	std::cout << std::endl;
+	std::cout << "ClapTrap's attributes:" << std::endl;
+	std::cout << "name: " << _name << std::endl;
+	std::cout << "hit points: " << _hitPoints << std::endl;
+	std::cout << "energy points: " << _energyPoints << std::endl;
+	std::cout << "attack damage: " << _attackDamage << std::endl;
+	std::cout << std::endl;
 }

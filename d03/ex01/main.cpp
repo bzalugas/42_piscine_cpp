@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/24 16:50:09 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/24 19:00:22 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 13:20:11 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -19,17 +19,23 @@ int main(void)
 	ClapTrap	b("Bernard");
 	ScavTrap	s("Scav");
 
-	a.attack("Bernard");
+	a.display();
+	b.display();
+	s.display();
+	a.attack(b.getName());
 	b.takeDamage(9);
 	b.beRepaired(9);
-	b.attack("Robert");
+	b.attack(a.getName());
 	a.takeDamage(10);
 	a.beRepaired(5);
-	a.attack("Bernard");
-	s.attack("Bernard");
+	a.attack(b.getName());
+	s.attack(b.getName());
 	s.guardGate();
 	b.takeDamage(s.getAttackDamage());
 	s.takeDamage(100);
-	s.attack("Robert");
+	s.attack(a.getName());
+	a.display();
+	b.display();
+	s.display();
 	return (0);
 }

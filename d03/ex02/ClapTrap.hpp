@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/19 14:53:21 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/24 19:00:39 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 13:17:26 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -31,6 +31,8 @@ public:
 	void		attack(std::string const &target);
 	void		takeDamage(unsigned int amount);
 	void		beRepaired(unsigned int amount);
+
+	void		display(void) const;
 
 protected:
 	std::string	_name;

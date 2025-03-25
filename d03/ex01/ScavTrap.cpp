@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/24 17:16:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/24 19:02:48 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 13:09:11 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -16,6 +16,9 @@
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called." << std::endl;
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name)

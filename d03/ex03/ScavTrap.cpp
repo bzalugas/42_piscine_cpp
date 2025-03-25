@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/03/24 17:16:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/03/25 13:09:41 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/03/25 13:10:31 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -69,7 +69,7 @@ void		ScavTrap::attack(std::string const &target)
 	}
 }
 
-void		ScavTrap::guardGate(void)
+void		ScavTrap::guardGate(void) const
 {
 	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
 }
