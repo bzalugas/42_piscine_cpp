@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/17 19:12:02 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/21 13:41:55 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/23 11:37:39 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -31,12 +31,27 @@ Cat::~Cat(void)
 
 Cat	&Cat::operator=(Cat const &right)
 {
-	type = right.type;
-	this->_brain = right._brain;
+	if (this != &right)
+	{
+		type = right.type;
+		delete _brain;
+		_brain = new Brain(*right._brain);
+	}
 	return (*this);
 }
 
 void	Cat::makeSound(void) const
 {
 	std::cout << "Miaow... Seriously ?" << std::endl;
+}
+
+Brain			*Cat::getBrain(void) const
+{
+	return (_brain);
+}
+
+void			Cat::setBrain(const Brain &brain)
+{
+	delete _brain;
+	_brain = new Brain(brain);
 }

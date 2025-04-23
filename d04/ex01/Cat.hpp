@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/17 19:11:19 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/21 13:35:28 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/23 11:33:24 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -24,6 +24,8 @@ public:
 	Cat	&operator=(Cat const &right);
 
 	virtual void	makeSound(void) const;
+	Brain			*getBrain(void) const;
+	void			setBrain(const Brain &brain);
 
 private:
 	Brain	*_brain;

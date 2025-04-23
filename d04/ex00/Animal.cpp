@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/17 18:49:40 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/17 19:22:23 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/23 11:00:14 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -25,7 +25,7 @@ Animal::Animal(Animal const &copy) : type(copy.type)
 
 Animal::Animal(const std::string &type) : type(type)
 {
-	std::cout << "Animal parametered constructor called." << std::endl;
+	std::cout << "Animal parameterized constructor called." << std::endl;
 }
 
 Animal::~Animal(void) { std::cout << "Animal destructor called." << std::endl; }

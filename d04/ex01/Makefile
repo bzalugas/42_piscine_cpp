@@ -6,21 +6,23 @@
 #    By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 12:54:14 by bazaluga          #+#    #+#              #
-#    Updated: 2025/04/17 19:56:26 by bazaluga         ###   ########.fr        #
+#    Updated: 2025/04/23 10:59:16 by bazaluga         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	:=  main
 SRCDIR	:=  .
 OBJDIR	:=  .obj
-SRC	:=  main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp
+SRC	:=  main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp Brain.cpp
 OBJ	:=  $(SRC:.cpp=.o)
 SRC	:=  $(addprefix $(SRCDIR)/, $(SRC))
 OBJ	:=  $(addprefix $(OBJDIR)/, $(OBJ))
 CC	:=  c++
-CFLAGS	:=  -Wall -Wextra -Werror -std=c++98
+CFLAGS	:=  -Wall -Wextra -Werror -MMD -std=c++98
 
 all:		$(NAME)
+
+-include	$(OBJ:.o=.d)
 
 $(OBJDIR)/%.o:	$(SRCDIR)/%.cpp | $(OBJDIR)
 		$(CC) $(CFLAGS) -c $< -o $@

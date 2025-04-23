@@ -25,7 +25,7 @@ Animal::Animal(Animal const &copy) : type(copy.type)
 
 Animal::Animal(const std::string &type) : type(type)
 {
-	std::cout << "Animal parametered constructor called." << std::endl;
+	std::cout << "Animal parameterized constructor called." << std::endl;
 }
 
 Animal::~Animal(void) { std::cout << "Animal destructor called." << std::endl; }

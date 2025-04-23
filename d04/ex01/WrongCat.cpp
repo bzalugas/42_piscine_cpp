@@ -27,7 +27,7 @@ WrongAnimal::WrongAnimal(WrongAnimal const &copy) : type(copy.type)
 
 WrongAnimal::WrongAnimal(const std::string &type) : type(type)
 {
-	std::cout << "WrongAnimal parametered constructor called." << std::endl;
+	std::cout << "WrongAnimal parameterized constructor called." << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(void)
@@ -61,7 +61,7 @@ WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 
 WrongCat::WrongCat(WrongCat const &copy) : WrongAnimal(copy)
 {
-	std::cout << "WrongCat parametered constructor called." << std::endl;
+	std::cout << "WrongCat parameterized constructor called." << std::endl;
 }
 
 WrongCat::~WrongCat(void)

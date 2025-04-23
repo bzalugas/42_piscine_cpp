@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/21 13:14:04 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/21 13:41:34 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/23 11:46:59 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -44,4 +44,10 @@ const std::string	&Brain::getIdea(int i) const
 void				Brain::setIdea(int i, const std::string &idea)
 {
 	this->ideas[i] = idea;
+}
+
+void				Brain::showIdeas(void) const
+{
+	for (int i = 0; i < NB_IDEAS; i++)
+		std::cout << "idea n." << i << ": " << ideas[i] << std::endl;
 }

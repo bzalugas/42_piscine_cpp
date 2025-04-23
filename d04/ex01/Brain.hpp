@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/21 13:14:14 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/21 13:41:30 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/23 11:45:54 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -26,6 +26,7 @@ public:
 
 	const std::string	&getIdea(int i) const;
 	void				setIdea(int i, const std::string &idea);
+	void				showIdeas(void) const;
 
 private:
 	std::string	ideas[NB_IDEAS];
