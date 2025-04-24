@@ -6,11 +6,11 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/17 19:12:38 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/24 09:55:10 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/24 10:06:32 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
@@ -49,7 +49,7 @@ void	test_brain(void)
 
 void	test_animals(void)
 {
-	Animal	*array[ANIMALS];
+	AAnimal	*array[ANIMALS];
 
 	std::cout << "\n******** ANIMALS TESTING **********" << std::endl;
 	std::cout << "******** Array assignation ********" << std::endl;
@@ -113,6 +113,7 @@ void	test_animals(void)
 
 int	main(void)
 {
+	// AAnimal a;
 	test_brain();
 	test_animals();
 	return (0);
