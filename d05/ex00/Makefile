@@ -6,14 +6,14 @@
 #    By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 12:54:14 by bazaluga          #+#    #+#              #
-#    Updated: 2025/04/28 15:35:24 by bazaluga         ###   ########.fr        #
+#    Updated: 2025/04/28 15:44:27 by bazaluga         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	:=  main
 SRCDIR	:=  .
 OBJDIR	:=  .obj
-SRC	:=  main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRC	:=  main.cpp Bureaucrat.cpp
 OBJ	:=  $(SRC:.cpp=.o)
 SRC	:=  $(addprefix $(SRCDIR)/, $(SRC))
 OBJ	:=  $(addprefix $(OBJDIR)/, $(OBJ))
