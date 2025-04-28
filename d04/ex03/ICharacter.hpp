@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/24 10:49:32 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/24 11:18:35 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/28 12:15:17 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -23,6 +23,7 @@ public:
 	virtual void				equip(AMateria *m) = 0;
 	virtual void				unequip(int idx) = 0;
 	virtual void				use(int idx, ICharacter &target) = 0;
+	virtual AMateria			*getMateria(int idx) const = 0;
 };
 
 #endif // ICHARACTER_H

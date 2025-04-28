@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/24 10:46:44 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/24 10:47:13 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/25 17:12:13 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -21,6 +21,8 @@ public:
 	~Cure(void);
 
 	Cure	&operator=(Cure const &right);
+
+	virtual AMateria	*clone(void) const;
 
 };
 

@@ -6,7 +6,7 @@
 //   By: bazaluga <bazaluga@student.42.fr>          +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
 //   Created: 2025/04/24 10:33:32 by bazaluga          #+#    #+#             //
-//   Updated: 2025/04/24 11:11:26 by bazaluga         ###   ########.fr       //
+//   Updated: 2025/04/25 17:16:02 by bazaluga         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
@@ -17,10 +17,7 @@ AMateria::AMateria(void) {}
 
 AMateria::AMateria(std::string const &type) : _type(type) {}
 
-AMateria::AMateria(AMateria const &copy)
-{
-	this->_type = copy._type;
-}
+AMateria::AMateria(AMateria const &copy) : _type(copy._type) {}
 
 AMateria::~AMateria(void) {}
 
